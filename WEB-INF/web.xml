@@ -5,21 +5,77 @@
 	version="2.4">
 
 	<servlet>
-		<servlet-name>Regist</servlet-name>
-		<servlet-class>servlet.RegistInfo</servlet-class>
+		<servlet-name>RegisterT</servlet-name>
+		<servlet-class>servlet.RegisterTournament</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Regist</servlet-name>
-		<url-pattern>/jsp/RegistInfo</url-pattern>
+		<servlet-name>RegisterT</servlet-name>
+		<url-pattern>/jsp/RegisterTournament</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>RegisterP</servlet-name>
+		<servlet-class>servlet.RegisterPlayer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterP</servlet-name>
+		<url-pattern>/jsp/RegisterPlayer</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>Search</servlet-name>
-		<servlet-class>servlet.SearchInfo</servlet-class>
+		<servlet-name>RegisterR</servlet-name>
+		<servlet-class>servlet.RegisterRecord</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Search</servlet-name>
-		<url-pattern>/jsp/SearchInfo</url-pattern>
+		<servlet-name>RegisterR</servlet-name>
+		<url-pattern>/jsp/RegisterRecord</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RegisterPT</servlet-name>
+		<servlet-class>servlet.RegisterPlayedTournament</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterPT</servlet-name>
+		<url-pattern>/jsp/RegisterPlayedTournament</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+        <servlet-name>
+            todo
+        </servlet-name>
+        <servlet-class>
+            test.TodoServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>
+            todo
+        </servlet-name>
+        <url-pattern>
+            /todo
+        </url-pattern>
+    </servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>SearchT</servlet-name>
+		<servlet-class>servlet.SearchTournament</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchT</servlet-name>
+		<url-pattern>/jsp/SearchTournament</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchR</servlet-name>
+		<servlet-class>servlet.SearchRecord</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchR</servlet-name>
+		<url-pattern>/jsp/SearchRecord</url-pattern>
 	</servlet-mapping>
 
 </web-app>
