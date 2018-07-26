@@ -11,11 +11,12 @@ public class Record {
 	private String battleDay = null;		//	対戦日
 	private String battleCount = null;		//	カウント
 	private String battleStage = null;		//	対戦位置
+	private String userName = null;		//	登録者名
 
 
 
 	//　初期値を引数に持ったコンストラクタ
-	public Record(String playerName, String tournamentName, String battleDay,String battleCount,String battleStage){
+	public Record(String playerName, String tournamentName, String battleDay,String battleCount,String battleStage,String userName){
 
 
 		this.playerName = playerName;
@@ -23,6 +24,7 @@ public class Record {
 		this.battleDay = battleDay;
 		this.battleCount = battleCount;
 		this.battleStage = battleStage;
+		this.userName = userName;
 
 
 	}
@@ -39,6 +41,8 @@ public class Record {
 	public void setBattleDay(String battleDay){ this.battleDay = battleDay; }
 	public void setBattleCount(String battleCount){ this.battleCount = battleCount; }
 	public void setBattleStage(String battleStage){ this.battleStage = battleStage; }
+	public void setUserName(String userName){ this.userName = userName; }
+
 
 
 	//  getメソッド
@@ -49,5 +53,6 @@ public class Record {
 	public String getBattleDay(){ return this.battleDay; }
 	public String getBattleCount(){ return this.battleCount; }
 	public String getBattleStage(){ return this.battleStage; }
+	public String getUserName(){ return this.userName; }
 
 }

@@ -37,7 +37,7 @@ public class PlayedTournamentManager {
 		this.connection = null;
 	}
 
-	//  検索
+	//  選手名での検索
 		public PlayedTournament searchPlayedTournament(PlayedTournament played_tournament){
 
 			//  PlayedTournamentDAOオブジェクト生成
@@ -47,6 +47,7 @@ public class PlayedTournamentManager {
 			this.connection = played_tournamentDAO.createConnection();
 
 			//  検索する
+
 			played_tournament = played_tournamentDAO.searchPlayedTournament(played_tournament, this.connection);
 
 			//  DataBaseとの接続を切断する
@@ -57,6 +58,7 @@ public class PlayedTournamentManager {
 
 			return played_tournament;
 		}
+
 
 
 

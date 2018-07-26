@@ -61,7 +61,7 @@ public class RecordDAO{
 		try{
 
 			//  SQLコマンド
-			String sql = "insert into record values(?, ?, ?,?,?)";
+			String sql = "insert into record(player_name,tournament_name,day,count,stage,user_name) values(?, ?, ?,?,?,?)";
 
 			//  SQLコマンドの実行
 			PreparedStatement stmt = connection.prepareStatement(sql);
@@ -72,6 +72,7 @@ public class RecordDAO{
 			stmt.setString(3, record.getBattleDay());
 			stmt.setString(4, record.getBattleCount());
 			stmt.setString(5, record.getBattleStage());
+			stmt.setString(6, record.getUserName());
 
 
 			stmt.executeUpdate();
@@ -92,7 +93,7 @@ public class RecordDAO{
 			try{
 
 				//  SQLコマンド
-				String sql = "select * from record where player_name = '" + record.getPlayerName() + "' and tournament_name='"+record.getTournamentName()+"'";
+				String sql = "select * from record where player_name = '" + record.getPlayerName() + "' and tournament_name='"+record.getTournamentName()+"'and user_name='"+record.getUserName()+"'";
 
 				//  SQLのコマンドを実行する
 				//  実行結果はrsに格納される
@@ -107,6 +108,7 @@ public class RecordDAO{
 				record.setBattleDay(rs.getString("day"));
 				record.setBattleCount(rs.getString("count"));
 				record.setBattleStage(rs.getString("stage"));
+				record.setUserName(rs.getString("user_name"));
 
 
 				//  終了処理

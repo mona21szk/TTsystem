@@ -3,23 +3,38 @@
 	index.jsp
 ---------------------------------->
 <HTML>
+<title>卓球戦績システム</title>
 <BODY>
 <BODY bgcolor="pink">
 <div class="container">
-	<h1 class="page-header">卓球戦績システム</h1>
-	<p class="lead">卓球の戦績を管理するシステムです！</p>
+	<b><font size="7" class="page-header">卓球戦績システム</font></b>
+	<h3 class="lead">卓球の戦績を管理するシステムです！</h3>
 	<br>
 </div>
+<h3 class="lead">●登録</h3>
+<a href="./registerTournament.jsp"> 大会</a>
+&nbsp;
+<a href="./registerPlayer.jsp"> 選手</a>
+&nbsp;
+<a href="./registerPlayedTournament.jsp"> 出場大会</a>
+&nbsp;
+<a href="./registerRecord.jsp"> 対戦結果</a>
 
 <BR>
-<a href="./registerTournament.jsp"> 大会登録</a>
-<a href="./searchTournament.jsp"> 大会検索</a>
 <BR>
-<a href="./registerPlayer.jsp"> 選手登録</a>
+<h3 class="lead">●検索</h3>
+<a href="./searchTournament.jsp"> 大会</a>
+&nbsp;
+<a href="./searchPlayer.jsp"> 選手</a>
+&nbsp;
+<a href="./searchPlayedTournament.jsp"> 出場大会</a>
+&nbsp;
+<a href="./searchRecord.jsp"> 対戦結果</a>
 <BR>
-<a href="./registerPlayedTournament.jsp"> 出場大会登録</a>
 <BR>
-<a href="./registerRecord.jsp"> 対戦結果登録</a>
-<a href="./searchRecord.jsp"> 対戦結果検索</a>
+<BR>
+<hr>
+<br>
+<a href="./login.jsp"> ログアウト</a>
 </BODY>
 </HTML>

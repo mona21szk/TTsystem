@@ -43,6 +43,7 @@ import control.RecordManager;
 		String day= request.getParameter("day");
 		String count = request.getParameter("count");
 		String stage = request.getParameter("stage");
+		String user_name = request.getParameter("user_name");
 
 
 		System.out.println("取得した文字列は"+player_name+"です！");
@@ -50,9 +51,17 @@ import control.RecordManager;
 		System.out.println("取得した文字列は"+day+"です！");
 		System.out.println("取得した文字列は"+count+"です！");
 		System.out.println("取得した文字列は"+stage+"です！");
+		System.out.println("取得した文字列は"+user_name+"です！");
+
+
+		if(player_name=="" || tournament_name==""|| user_name=="" ) {
+			getServletContext().getRequestDispatcher("/jsp/registerPlayedTournament.jsp").forward(request, response);
+		}
+		else {
+
 
 		// recordオブジェクトに情報を格納
-		Record record = new Record(player_name,tournament_name , day,count,stage);
+		Record record = new Record(player_name,tournament_name , day,count,stage,user_name);
 
 		//  RecordManagerオブジェクトの生成
 		RecordManager manager = new RecordManager();
@@ -60,8 +69,14 @@ import control.RecordManager;
 		//  登録
 		manager.registerRecord(record);
 
+		if(player_name=="" || tournament_name=="" || user_name=="") {
+			getServletContext().getRequestDispatcher("/jsp/registerRecord.jsp").forward(request, response);
+		}
+		else {
 		//  成功画面を表示する
-		//System.out.println("登録できました！");
+		System.out.println("登録できました！");
 		response.sendRedirect(response.encodeRedirectURL("./registerSuccess.jsp"));
 		}
+	}
+	}
 }

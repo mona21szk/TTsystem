@@ -41,22 +41,17 @@
 	</servlet-mapping>
 
 	<servlet>
-        <servlet-name>
-            todo
-        </servlet-name>
-        <servlet-class>
-            test.TodoServlet
-        </servlet-class>
-    </servlet>
+		<servlet-name>RegisterU</servlet-name>
+		<servlet-class>servlet.RegisterUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterU</servlet-name>
+		<url-pattern>/jsp/RegisterUser</url-pattern>
+	</servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>
-            todo
-        </servlet-name>
-        <url-pattern>
-            /todo
-        </url-pattern>
-    </servlet-mapping>
+
+
+
 
 
 
@@ -77,5 +72,42 @@
 		<servlet-name>SearchR</servlet-name>
 		<url-pattern>/jsp/SearchRecord</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchP</servlet-name>
+		<servlet-class>servlet.SearchPlayer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchP</servlet-name>
+		<url-pattern>/jsp/SearchPlayer</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchPT</servlet-name>
+		<servlet-class>servlet.SearchPlayedTournament</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchPT</servlet-name>
+		<url-pattern>/jsp/SearchPlayedTournament</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchU</servlet-name>
+		<servlet-class>servlet.SearchUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchU</servlet-name>
+		<url-pattern>/jsp/SearchUser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchPT2</servlet-name>
+		<servlet-class>servlet.SearchPlayedTournament2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchPT2</servlet-name>
+		<url-pattern>/jsp/SearchPlayedTournament2</url-pattern>
+	</servlet-mapping>
+
 
 </web-app>

@@ -37,6 +37,13 @@ import control.RecordManager;
 		// requestオブジェクトから登録情報の取り出し
 		String tournament_name = request.getParameter("tournament_name");
 		String player_name = request.getParameter("player_name");
+		String user_name = request.getParameter("user_name");
+
+
+		if(player_name=="" || tournament_name==""||user_name=="" ) {
+			getServletContext().getRequestDispatcher("/jsp/searchRecord.jsp").forward(request, response);
+		}
+		else {
 
 
 
@@ -45,7 +52,7 @@ import control.RecordManager;
 		String stage = null;
 
 		// recordのオブジェクトに情報を格納
-		Record record = new Record(player_name,tournament_name, day,count,stage);
+		Record record = new Record(player_name,tournament_name, day,count,stage,user_name);
 
 		//  RecordManagerオブジェクトの生成
 		RecordManager manager = new RecordManager();
@@ -54,8 +61,16 @@ import control.RecordManager;
 		record = manager.searchRecord(record);
 		//  requestオブジェクトにオブジェクトを登録
 		request.setAttribute("Record", record);
+
+
+		if(record==null) {
+			getServletContext().getRequestDispatcher("/jsp/searchRecord.jsp").forward(request, response);
+		}
+		else {
 		//  情報表示画面を表示する
 		//  forwardはrequestオブジェクトを引数として、次のページに渡すことができる
 		getServletContext().getRequestDispatcher("/jsp/showRecord.jsp").forward(request, response);
 		}
+	}
+	}
 }

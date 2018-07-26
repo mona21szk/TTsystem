@@ -61,7 +61,7 @@ public class PlayedTournamentDAO{
 		try{
 
 			//  SQLコマンド
-			String sql = "insert into played_tournament values(?, ?)";
+			String sql = "insert into played_tournament(player_name,tournament_name) values(?, ?)";
 
 			//  SQLコマンドの実行
 			PreparedStatement stmt = connection.prepareStatement(sql);
@@ -88,6 +88,7 @@ public class PlayedTournamentDAO{
 
 			try{
 
+				//List<PlayedTournament>list=new ArrayList<PlayedTournament>();
 				//  SQLコマンド
 				String sql = "select * from played_tournament where player_name = '" + played_tournament.getPlayerName() + "'";
 
@@ -98,16 +99,22 @@ public class PlayedTournamentDAO{
 
 				rs.first();
 
+				//while(rs.next()) {
 				//  rsからそれぞれの情報を取り出し、PlayedTournamentオブジェクトに設定する
 				played_tournament.setPlayerName(rs.getString("player_name"));
 				played_tournament.setTournamentName(rs.getString("tournament_name"));
+				//String player_name=rs.getString("player_name");
+				//String tournament_name=rs.getString("tournament_name");
+				//list.add(new PlayedTournament(player_name,tournament_name));
 
+				//}
 
 				//  終了処理
 				stmt.close();
 				rs.close();
 
 				//  PlayedTournamentオブジェクトを返す
+
 				return played_tournament;
 
 				}catch(SQLException e){
@@ -119,6 +126,7 @@ public class PlayedTournamentDAO{
 				}finally{
 				}
 		}
+
 
 	}
 

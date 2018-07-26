@@ -37,12 +37,17 @@ import control.PlayedTournamentManager;
 		request.setCharacterEncoding("UTF-8");
 
 		// requestオブジェクトから登録情報の取り出し
+
 		String player_name = request.getParameter("player_name");
 		String tournament_name = request.getParameter("tournament_name");
 
 
 		System.out.println("取得した文字列は"+player_name+"です！");
 		System.out.println("取得した文字列は"+tournament_name+"です！");
+		if(player_name=="" || tournament_name=="" ) {
+			getServletContext().getRequestDispatcher("/jsp/registerPlayedTournament.jsp").forward(request, response);
+		}
+		else {
 
 		// playedtournamentオブジェクトに情報を格納
 		PlayedTournament played_tournament = new PlayedTournament(player_name, tournament_name);
@@ -53,8 +58,14 @@ import control.PlayedTournamentManager;
 		//  登録
 		manager.registerPlayedTournament(played_tournament);
 
+		if(player_name=="" || tournament_name=="" ) {
+			getServletContext().getRequestDispatcher("/jsp/registerPlayedTournament.jsp").forward(request, response);
+		}
+		else {
 		//  成功画面を表示する
 		System.out.println("登録できました！");
 		response.sendRedirect(response.encodeRedirectURL("./registerSuccess.jsp"));
 		}
+	}
+	}
 }

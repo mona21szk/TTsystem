@@ -39,6 +39,11 @@ import control.TournamentManager;
 		// requestオブジェクトから登録情報の取り出し
 		String tournament_name = request.getParameter("tournament_name");
 
+		if(tournament_name=="" ) {
+			getServletContext().getRequestDispatcher("/jsp/searchTournament.jsp").forward(request, response);
+		}
+		else {
+
 		String term1 = null;
 		String term2 = null;
 		String place = null;
@@ -53,8 +58,16 @@ import control.TournamentManager;
 		tournament = manager.searchTournament(tournament);
 		//  requestオブジェクトにオブジェクトを登録
 		request.setAttribute("Tournament", tournament);
+
+		if(tournament==null ) {
+			getServletContext().getRequestDispatcher("/jsp/searchTournament.jsp").forward(request, response);
+		}
+		else {
+
 		//  情報表示画面を表示する
 		//  forwardはrequestオブジェクトを引数として、次のページに渡すことができる
 		getServletContext().getRequestDispatcher("/jsp/showTournament.jsp").forward(request, response);
 		}
+		}
+	}
 }

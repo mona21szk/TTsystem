@@ -47,6 +47,12 @@ import control.PlayerManager;
 		System.out.println("取得した文字列は"+type+"です！");
 		System.out.println("取得した文字列は"+rubber+"です！");
 
+		if(player_name==""  ) {
+			getServletContext().getRequestDispatcher("/jsp/registerPlayer.jsp").forward(request, response);
+		}
+		else {
+
+
 		// playerオブジェクトに情報を格納
 		Player player = new Player(player_name, sex, type,rubber);
 
@@ -56,8 +62,14 @@ import control.PlayerManager;
 		//  登録
 		manager.registerPlayer(player);
 
+		if(player_name=="" ) {
+			getServletContext().getRequestDispatcher("/jsp/registerPlayer.jsp").forward(request, response);
+		}
+		else {
 		//  成功画面を表示する
 		//System.out.println("登録できました！");
 		response.sendRedirect(response.encodeRedirectURL("./registerSuccess.jsp"));
 		}
+	}
+	}
 }

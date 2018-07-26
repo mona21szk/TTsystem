@@ -47,6 +47,13 @@ import control.TournamentManager;
 		System.out.println("取得した文字列は"+term2+"です！");
 		System.out.println("取得した文字列は"+place+"です！");
 
+
+		if(tournament_name=="" ) {
+			getServletContext().getRequestDispatcher("/jsp/registerTournament.jsp").forward(request, response);
+		}
+		else {
+
+
 		// tournamentオブジェクトに情報を格納
 		Tournament tournament = new Tournament(tournament_name, term1,term2, place);
 
@@ -56,8 +63,14 @@ import control.TournamentManager;
 		//  登録
 		manager.registerTournament(tournament);
 
+		if(tournament_name=="" ) {
+			getServletContext().getRequestDispatcher("/jsp/registerTournament.jsp").forward(request, response);
+		}
+		else {
 		//  成功画面を表示する
 		//System.out.println("登録できました！");
 		response.sendRedirect(response.encodeRedirectURL("./registerSuccess.jsp"));
 		}
+	}
+	}
 }

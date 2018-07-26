@@ -6,7 +6,7 @@
 <html>
 <head><title>結果</title></head>
 
-<body bgcolor="yellow">
+<body bgcolor="gold">
 <br>
 
 <table border="1" width="100%">
